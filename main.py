@@ -1,3 +1,4 @@
+
 import random
 
 silabario = ['ba', 'be', 'bi', 'bo', 'bu', 'da', 'de', 'di', 'do', 'du', 'ga', 'ge', 'gi', 'go', 'gu',
