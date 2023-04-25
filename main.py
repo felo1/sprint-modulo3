@@ -1,4 +1,5 @@
 import random
+
 silabario = ['ba', 'be', 'bi', 'bo', 'bu', 'da', 'de', 'di', 'do', 'du', 'ga', 'ge', 'gi', 'go', 'gu',
              'ka', 'ke', 'ki', 'ko', 'ku', 'la', 'le', 'li', 'lo', 'lu', 'ma', 'me', 'mi', 'mo', 'mu',
              'na', 'ne', 'ni', 'no', 'nu', 'pa', 'pe', 'pi', 'po', 'pu', 'ra', 're', 'ri', 'ro', 'ru',
@@ -17,6 +18,14 @@ simbolos = "!#$%&/()=?" #puros iconos accesibles con el teclado LATAM pasando el
 
 usuarios = []
 #Mediante una función, a todos los usuarios se les creará una cuenta automáticamente.
+from itertools import cycle
+
+def digito_verificador(rut):
+    reversed_digits = map(int, reversed(str(rut)))
+    factors = cycle(range(2, 8))
+    s = sum(d * f for d, f in zip(reversed_digits, factors))
+    return (-s) % 11
+
 def crear_usuario():
     
     for  i in range(10): #10 loops fijos
