@@ -25,9 +25,9 @@ def digito_verificador(rut):
     factors = cycle(range(2, 8))
     s = sum(d * f for d, f in zip(reversed_digits, factors))
     return (-s) % 11
-def generador_rut()
+def generador_rut():
   numero_rut = random.randint(1000000, 27000000)
-  return (str(numero_rut) + "-" + str(digito_verificador(rut)))
+  return (str(numero_rut) + "-" + str(digito_verificador(numero_rut)))
 
 def crear_usuario():
     
