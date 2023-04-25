@@ -60,3 +60,4 @@ crear_usuario()
 #aplicación (pueden ser personas, pacientes, organizaciones sociales o instituciones públicas).
 #este print cumple con la función de recorrer la lista
 for user in usuarios: print(user)
+
