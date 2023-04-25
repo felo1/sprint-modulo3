@@ -39,7 +39,7 @@ def crear_usuario():
         #se realiza un join sin espacios de silabas elegidas al azar del silabario, mediante el metodo random.sample() 
         apellido_usuario = ''.join(random.sample(silabario, n_silabas)).capitalize()
         username = nombre_usuario[0] + apellido_usuario + "@adalid.cl" #arma un username con la inicial del nombre de usuario, apellido y dominio
-        #rut_usuario = generador_rut()
+        rut = generador_rut()
         nombre_completo = nombre_usuario + " " + apellido_usuario 
         #La contraseña debe ser creada con random y 
         # debe cumplir con los siguientes criterios: mayúsculas, minúsculas y números.
@@ -62,7 +62,7 @@ def crear_usuario():
                 print("teléfono inválido, ingrese un número de 8 carácteres:\n")
                 continue
         telefono = "+569" + telefono #agrega el prefijo de pais, +569
-        usuario_nuevo = {"nombre_usuario":nombre_completo, "password":password, "telefono":telefono, "username":username.lower()}
+        usuario_nuevo = {"nombre_usuario":nombre_completo, "password":password, "telefono":telefono, "username":username.lower(), "rut": rut}
         usuarios.append(usuario_nuevo)
         print("Usuario creado exitosamente")
     print("Creación de usuarios terminada")
